@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHMDRYFY14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHMDRYFY14');
+</script>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="ESpN68ZcAyPgJSRh_aqdPPp_czjKNdqTWuhKzK4y1hw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join D-silver Beauty College in Nairobi. Learn hairdressing, makeup, cosmetology and beauty therapy with hands-on training. Enroll today.">
+
+    <title>D-silver Beauty College Limuru | Hairdressing & Makeup Courses Kenya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-pink: #d42a7d;
+            --deep-purple: #1a0b2e;
+            --silver: #c0c0c0;
+            --soft-white: #f8f9fa;
+            --glow: 0 0 15px rgba(212, 42, 125, 0.6);
+            --silver-glow: 0 0 15px rgba(192, 192, 192, 0.5);
+            --glass: rgba(26, 11, 46, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--deep-purple);
+            color: var(--soft-white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        /* --- 1. NEW D-ANIMATED LOADER --- */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--deep-purple);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .d-loader-svg {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .d-path {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawD 3s infinite alternate, changeColor 6s infinite;
+        }
+
+        @keyframes drawD {
+            0% { stroke-dashoffset: 300; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        @keyframes changeColor {
+            0%, 100% { stroke: var(--dark-pink); filter: drop-shadow(0 0 8px var(--dark-pink)); }
+            50% { stroke: var(--silver); filter: drop-shadow(0 0 12px var(--silver)); }
+        }
+
+        .loader-text {
+            font-family: 'Cinzel';
+            color: var(--silver);
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+            animation: pulseText 1.5s infinite;
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* Prevent scrolling when menu or loader is open */
+        body.no-scroll { overflow: hidden; height: 100vh; }
+
+        /* --- 2. NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: 0.5s;
+            backdrop-filter: blur(10px);
+        }
+
+        nav.scrolled {
+            background: var(--glass);
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--silver);
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--soft-white);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-pink);
+            text-shadow: var(--glow);
+        }
+
+        .nav-links a.btn-primary {
+            background: var(--dark-pink);
+            color: white;
+            box-shadow: 0 0 15px var(--dark-pink);
+            border-radius: 3px;
+            padding: 10px 20px;
+        }
+
+        .nav-links a.btn-primary:hover {
+            color: white;
+            background: #ff4fab;
+            box-shadow: 0 0 20px rgba(212, 42, 125, 0.6);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dark-pink);
+            box-shadow: var(--glow);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--silver);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* --- 3. HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 5, 26, 0.7), rgba(212, 42, 125, 0.6)),
+                        url('img.jpg') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 10;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            display: inline-block;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--dark-pink);
+            color: white;
+            box-shadow: var(--glow);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--silver);
+            color: var(--silver);
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 25px var(--dark-pink);
+            color: white;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- 4. WHY CHOOSE SECTION --- */
+        section { padding: 100px 10%; position: relative; z-index: 1; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .glass-card.reveal { opacity: 1; transform: translateY(0); }
+
+        .glass-card:hover {
+            border-color: var(--dark-pink);
+            box-shadow: var(--glow);
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- 5. COURSES --- */
+        .course-card {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .no-scroll { overflow: hidden; }
+
+        .course-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, var(--deep-purple));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            transition: 0.5s;
+        }
+
+        .course-card:hover img { transform: scale(1.1); }
+        .course-card:hover .course-overlay { background: rgba(212, 42, 125, 0.4); }
+
+        /* --- 6. SUCCESS COUNTER --- */
+        .stats {
+            background: linear-gradient(90deg, var(--deep-purple), var(--dark-pink));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 60px 10%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item h2 { font-size: 3rem; color: var(--silver); }
+
+        /* --- 7. MODAL SYSTEM --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 5, 26, 0.95);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: var(--deep-purple);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--dark-pink);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            box-shadow: var(--glow);
+            text-align: left;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--silver);
+            cursor: pointer;
+        }
+
+        .modal-content h3 { color: var(--dark-pink); margin-bottom: 15px; font-size: 2rem; }
+        .modal-content ul { margin-top: 15px; padding-left: 20px; color: var(--silver); }
+        .modal-content li { margin-bottom: 10px; }
+
+        /* --- 10. CTA SECTION --- */
+        .cta {
+            background: linear-gradient(45deg, #1a0b2e, #d42a7d);
+            text-align: center;
+            border-radius: 30px;
+            margin: 50px 10%;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            background: #0f051a;
+            padding: 80px 10% 20px;
+            color: gray;
+            border-top: 1px solid rgba(192,192,192,0.1);
+            position: relative;
+            z-index: 1;
+        }
+a p {
+    color: gray;
+    text-decoration: none;
+}
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                background: var(--deep-purple);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { right: 0; }
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 60px 5%; }
+        }
+        footer a {
+            text-decoration: none;
+        }
+        span img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: var(--dark-pink);
+        }
+     footer svg {
+            stroke: var(--dark-pink);
+            
+            
+        }
+        
+    </style>
+</head>
+<body class="no-scroll"> <div id="loader">
+        <svg class="d-loader-svg" viewBox="0 0 100 100">
+            <path class="d-path" d="M30,20 H50 C75,20 75,80 50,80 H30 V20 Z" />
+        </svg>
+        <p class="loader-text">D-SILVER</p>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <a href="#" class="logo">D-SILVER</a>
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li style="color: deeppink; text-decoration: underline;"><a style="color: deeppink;" href="index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/courses.html">Courses</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/apply.html" class="btn-primary" style="padding: 10px 20px;">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Become a Professional Beauty Expert</h1>
+            <p>Master the art of Makeup, Nails, and Hair at the world's most prestigious beauty academy.</p>
+            <div class="hero-btns">
+                <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                <a href="contact.html" class="btn btn-outline">Book a Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">The Excellence Advantage</h2>
+        <div class="grid">
+            <div class="glass-card reveal">
+                <span class="card-icon"><img src="teacher_3373446.png" alt="" /></span>
+                <h3>Elite Trainers</h3>
+                <p>Learn from professionals with years of experience.</p>
+            </div>
+            <div class="glass-card reveal">
+                <span class="card-icon"><img src="gear_7188260.png" alt="" /></span>
+                <h3>Modern Studios</h3>
+                <p>Practice in futuristic labs equipped with luxury brand tools.</p>
+            </div>
+            <div class="glass-card reveal">
+                <span class="card-icon"><img src="certificate_2766905.png" alt="" /></span>
+                <h3>Global Certification</h3>
+                <p>Your diploma is recognized by top luxury brands world-wide.</p>
+            </div>
+            <div class="glass-card reveal">
+                <span class="card-icon"><img src="personal-development_8869127.png" alt="" /></span>
+                <h3>Career Launch</h3>
+                <p>95% of our graduates land high-paying roles within 3 months.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" style="background: rgba(0,0,0,0.2);">
+        <h2 class="section-title">Master Your Craft</h2>
+        <div class="grid">
+            <div class="course-card reveal">
+                <img src="img8.jpeg" alt="Cosmetology">
+                <div class="course-overlay">
+                    <h3>Cosmetology</h3>
+                    <p>Diploma training in makeup, skin, and professional beauty techniques.</p>
+                    <button class="btn btn-primary btn-learn" data-course="cosmetology">Learn More</button>
+                </div>
+            </div>
+            <div class="course-card reveal">
+                <img src="img9.jpeg" alt="Hairdressing">
+                <div class="course-overlay">
+                    <h3>Hairdressing</h3>
+                    <p>Professional cuts, styling, and salon hair services.</p>
+                    <button class="btn btn-primary btn-learn" data-course="hairdressing">Learn More</button>
+                </div>
+            </div>
+            <div class="course-card reveal">
+                <img src="img18.jpeg" alt="Beauty Therapy">
+                <div class="course-overlay">
+                    <h3>Beauty Therapy</h3>
+                    <p>Advanced skin, massage, and spa therapy qualifications.</p>
+                    <button class="btn btn-primary btn-learn" data-course="beautytherapy">Learn More</button>
+                </div>
+            </div>
+             <div class="course-card reveal">
+                <img src="https://techpoint.africa/wp-content/uploads/2022/08/Coding-teaching.jpg.webp" alt="Computer Skills">
+                <div class="course-overlay">
+                    <h3>Computer Skills</h3>
+                    <p>Elevate your digital literacy and technical capabilities.</p>
+                    <button class="btn btn-primary btn-learn" data-course="computerskills">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat-item">
+            <h2 class="counter" data-target="500">0</h2>
+            <p>Students Trained</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="95">0</h2>
+            <p>Job Placement %</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="15">0</h2>
+            <p>Expert Mentors</p>
+        </div>
+    </div>
+
+    <section class="cta reveal">
+        <h2>Start Your Beauty Career Today</h2>
+        <p>Join the next intake and transform your passion into a global career.</p>
+        <br>
+        <a href="apply.html" class="btn btn-primary" style="background: white; color: var(--deep-purple);">Apply Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>D-SILVER</h3>
+                <p>The elite choice for beauty professionals. Redefining education through luxury and innovation.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+               <a href="courses.html"><p>Courses</p></a>
+                <a href="about.html"><p>About Us</p></a>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pin shape -->
+  <path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/>
+  
+  <!-- Inner circle -->
+  <circle cx="12" cy="10" r="3"/>
+</svg> Equity Bank Building, 2nd Floor, Limuru</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<!-- Phone handset -->
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+c-9.39-.9-16.92-8.43-17.82-17.82A2 2 0 0 1 4.11 2h3
+a2 2 0 0 1 2 1.72c.12.9.37 1.78.72 2.61
+a2 2 0 0 1-.45 2.11L8.09 9.91
+a16 16 0 0 0 6 6l1.47-1.29
+a2 2 0 0 1 2.11-.45c.83.35 1.71.6 2.61.72
+A2 2 0 0 1 22 16.92z"/>
+
+</svg> +254 786 915 715</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<!-- Envelope -->
+<rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+
+<!-- Envelope flap -->
+<path d="M3 7l9 6 9-6"/>
+
+</svg>info@d-silver.edu</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: gray; font-size: 0.8rem;">&copy; 2026 D-Silver Beauty College. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        // --- 1. Particles.js Initialization ---
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#d42a7d" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#d42a7d",
+                    "opacity": 0.5,
+                    "width": 1
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
+            },
+            "interactivity": { "events": { "onhover": { "enable": false } } },
+            "retina_detect": true
+        });
+
+        // --- LOADER LOGIC ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                body.classList.remove('no-scroll');
+                setTimeout(() => loader.style.display = 'none', 1000);
+            }, 3000); // 3-second cycle for the D-animation
+        });
+
+        // --- 3. Mobile Nav Logic ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            const isActive = navLinks.classList.toggle('active');
+            if (isActive) body.classList.add('no-scroll');
+            else body.classList.remove('no-scroll');
+        });
+        // --- CLICK OUTSIDE TO CLOSE ---
+window.addEventListener('click', (e) => {
+    // Check if the menu is currently active
+    if (navLinks.classList.contains('active')) {
+        /* If the click was NOT on the navLinks AND 
+           NOT on the hamburger button (or its spans), 
+           then close the menu.
+        */
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
+    }
+});
+
+
+// --- 4. Modal & Course Details Logic ---
+        const courseData = {
+            cosmetology: {
+                title: "Makeup Artistry",
+                details: "Learn the secrets of the world's top makeup artists.",
+                list: ["Master Bridal & Celebrity makeup", "Airbrush & HD techniques", "Color theory & Facial contouring", "SFX and Editorial styling","Diploma 12Months (5,500 per month)","Certificate 9Months (5,000 per month)"]
+            },
+            hairdressing: {
+                title: "Hairdressing",
+                details: "Diploma and certificate hair programs tailored for professional salon careers.",
+                list: ["Diploma — 9 months at 5,000 per month", "Certificate — 6 months at 4,500 per month", "Barbering, cutting and styling techniques, Dreadlocs and Artifical locs, Weave and wig installatioin, Braiding"]
+            },
+            beautytherapy: {
+                title: "Beauty Therapy",
+                details: "Comprehensive therapy training for spa, skin and wellness professionals.",
+                list: ["Diploma — 9 months at 5,000 per month", "Certificate — 6 months at 4,500 per month", "Nail Technology, Facial, waxing and skincare treatments, Makeup, Massage and luxury spa services"]
+            }
+        };
+
+        const modal = document.getElementById('courseModal');
+        const modalBody = document.getElementById('modalBody');
+        const closeBtn = document.querySelector('.close-modal');
+
+        document.querySelectorAll('.btn-learn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const course = e.target.getAttribute('data-course');
+                const data = courseData[course];
+                modalBody.innerHTML = `
+                    <h3>${data.title}</h3>
+                    <p>${data.details}</p>
+                    <ul>${data.list.map(item => `<li>${item}</li>`).join('')}</ul>
+                    <a href="apply.html" class="btn btn-primary" onclick="closeModal()">Enroll Now</a>
+                `;
+                modal.style.display = 'flex';
+            });
+        });
+
+        function closeModal() { modal.style.display = 'none'; }
+        closeBtn.onclick = closeModal;
+        window.onclick = (event) => { if (event.target == modal) closeModal(); }
+
+        // --- 5. Navbar Scroll Effect ---
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // --- 6. Scroll Reveal Animation ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    if(entry.target.classList.contains('counter')) startCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal, .counter').forEach(el => observer.observe(el));
+
+        // --- 7. Counter Logic ---
+        function startCounter(el) {
+            const target = +el.getAttribute('data-target');
+            let count = 0;
+            const updateCount = () => {
+                const speed = target / 100;
+                if (count < target) {
+                    count += speed;
+                    el.innerText = Math.ceil(count) + (el.innerText.includes('%') || target === 95 ? '%' : '+');
+                    setTimeout(updateCount, 20);
+                } else {
+                    el.innerText = target + (target === 95 ? '%' : '+');
+                }
+            };
+            updateCount();
+        }
+    </script>
+</body>
+</html>

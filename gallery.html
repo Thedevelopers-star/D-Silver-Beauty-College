@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHMDRYFY14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHMDRYFY14');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="google-site-verification" content="ESpN68ZcAyPgJSRh_aqdPPp_czjKNdqTWuhKzK4y1hw" />
+    <title>Master Gallery | D-Silver Beauty College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #d42a7d;
+            --purple: #0f051a;
+            --black: #050208;
+            --silver: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.05);
+            --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--black); color: white; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        
+        /* Loader and Modal Scroll Lock */
+        body.no-scroll { overflow: hidden; }
+
+        /* --- 1. D-SILVER LOADER (MATCHING ABOUT PAGE) --- */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, #2e124a 0%, #0f051a 100%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .d-loader-svg { width: 100px; height: 100px; margin-bottom: 25px; }
+
+        .d-path {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawD 3s infinite alternate, changeColor 6s infinite;
+        }
+
+        @keyframes drawD {
+            0% { stroke-dashoffset: 300; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        @keyframes changeColor {
+            0%, 100% { stroke: var(--pink); filter: drop-shadow(0 0 8px var(--pink)); }
+            50% { stroke: var(--silver); filter: drop-shadow(0 0 12px var(--silver)); }
+        }
+
+        .text {
+            font-family: 'Cinzel';
+            font-size: 1.1rem;
+            color: var(--silver);
+            letter-spacing: 3px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* --- BACKGROUND PARTICLES --- */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        nav.scrolled {
+            background: rgba(15, 5, 26, 0.95);
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(212, 42, 125, 0.3);
+        }
+        .logo { font-family: 'Cinzel'; font-weight: 700; font-size: 1.5rem; color: var(--silver); text-decoration: none; letter-spacing: 4px; }
+        
+        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-links a { 
+            text-decoration: none; color: white; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s; font-weight: 600;
+        }
+        .nav-links a:hover { color: var(--pink); text-shadow: 0 0 10px var(--pink); }
+
+        .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 2000; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: white; margin: 6px; transition: 0.4s; }
+          
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 80%;
+                background: var(--purple); flex-direction: column; justify-content: center;
+                transition: 0.5s; z-index: 1500;
+            }
+            .nav-links.active { right: 0; }
+        }
+
+        /* --- 2. GALLERY HERO SECTION --- */
+        .hero-banner {
+            height: 100vh; width: 100%; background: linear-gradient(rgba(0,0,0,0.3), var(--black)), url('img9.jpeg');
+            background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            position: relative; z-index: 1;
+        }
+        .hero-banner h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 10px; }
+        .hero-banner p { color: var(--pink); letter-spacing: 4px; text-transform: uppercase; font-size: 0.9rem; max-width: 600px; }
+
+        /* --- 3. FEATURED IMAGE SLIDER --- */
+        .featured-slider { padding: 80px 4%; text-align: center; position: relative; z-index: 1; }
+        .depth-container { height: 500px; position: relative; display: flex; align-items: center; justify-content: center; perspective: 1000px; margin-bottom: 40px; }
+        .f-card {
+            position: absolute; width:320px ; height: 420px; border-radius: 20px; background-size: cover; background-position: center;
+            transition: var(--transition); opacity: 0; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .f-card.active { transform: translate3d(0,0,0) scale(1); opacity: 1; z-index: 10; border: 2px solid var(--pink); }
+        .f-card.prev { transform: translate3d(-300px, 0, -100px) scale(0.8); opacity: 0.5; z-index: 5; }
+        .f-card.next { transform: translate3d(300px, 0, -100px) scale(0.8); opacity: 0.5; z-index: 5; }
+
+        .slider-dots { display: flex; gap: 10px; justify-content: center; }
+        .s-dot { width: 10px; height: 10px; background: rgba(255,255,255,0.2); border-radius: 50%; cursor: pointer; transition: 0.3s; }
+        .s-dot.active { background: var(--pink); width: 30px; border-radius: 5px; }
+
+        /* --- 4 & 5. CATEGORY FILTERS & IMAGE GRID --- */
+        .grid-section { padding: 60px 4%; width: 92%; margin: 0 auto; position: relative; z-index: 1; }
+        .filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; flex-wrap: wrap; }
+        .filter-btn {
+            background: transparent; border: 1px solid var(--glass); color: white; padding: 10px 25px; border-radius: 50px;
+            cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--pink); border-color: var(--pink); }
+
+        .masonry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .grid-item { position: relative; border-radius: 15px; overflow: hidden; height: 400px; cursor: pointer; }
+        .grid-item.hidden { display: none; }
+        .grid-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .grid-item:hover img { transform: scale(1.1); filter: brightness(0.4); }
+        .grid-overlay {
+            position: absolute; inset: 0; background: rgba(212, 42, 125, 0.2); opacity: 0; transition: 0.4s;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .grid-item:hover .grid-overlay { opacity: 1; }
+        .grid-overlay h4 { font-family: 'Cinzel'; font-size: 1.2rem; transform: translateY(20px); transition: 0.4s; }
+        .grid-item:hover h4 { transform: translateY(0); }
+
+        /* --- 7. BEFORE & AFTER SLIDER --- */
+        .ba-section { padding: 100px 4%; background: none; text-align: center; position: relative; z-index: 1; }
+        .ba-container { 
+            position: relative; width: 100%; max-width: 900px; height: 550px; margin: 40px auto; 
+            overflow: hidden; border-radius: 20px; border: 3px solid var(--glass);
+        }
+        .ba-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
+        .ba-before { width: 50%; border-right: 4px solid white; z-index: 2; overflow: hidden; }
+        .ba-range { position: absolute; top: 0; left: 0; width: 100%; height: 100%; appearance: none; background: transparent; z-index: 10; cursor: ew-resize; }
+        .ba-range::-webkit-slider-thumb { appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 2px solid var(--pink); box-shadow: 0 0 10px rgba(212,42,125,0.4); }
+        .ba-range::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 2px solid var(--pink); box-shadow: 0 0 10px rgba(212,42,125,0.4); }
+        .ba-range::-webkit-slider-runnable-track { height: 100%; background: transparent; }
+        .ba-range::-moz-range-track { height: 100%; background: transparent; }
+
+        /* --- 8. TESTIMONIALS --- */
+        .testimonials { padding: 100px 6%; background: none; text-align: center; position: relative; z-index: 1; }
+        .t-slide { display: none; max-width: 800px; margin: 0 auto; animation: fadeIn 1s; }
+        .t-slide.active { display: block; }
+        .t-slide blockquote { font-family: 'Cinzel'; font-size: 1.8rem; font-style: italic; margin-bottom: 20px; }
+        .t-slide cite { color: var(--pink); text-transform: uppercase; font-weight: 600; letter-spacing: 2px; }
+
+        /* --- 9. CTA SECTION --- */
+        .cta-section { 
+            padding: 100px 6%; background: linear-gradient(rgba(212, 42, 125, 0.9), rgba(15, 5, 26, 0.9)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920');
+            background-attachment: fixed; text-align: center; position: relative; z-index: 1;
+        }
+        .cta-btn { 
+            display: inline-block; margin-top: 30px; padding: 18px 45px; background: white; color: var(--purple); 
+            text-decoration: none; font-weight: 700; border-radius: 50px; transition: 0.3s;
+        }
+        .cta-btn:hover { background: var(--black); color: white; transform: translateY(-5px); }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            display: inline-block;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--pink);
+            color: white;
+            box-shadow: 0 0 15px rgba(212, 42, 125, 0.6);
+        }
+        .btn-outline {
+            border: 2px solid var(--silver);
+            color: var(--silver);
+            background: transparent;
+        }
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 25px var(--pink);
+            color: white;
+        }
+
+        /* --- 10. FOOTER --- */
+        footer { padding: 80px 6%; background: #050208; border-top: 1px solid var(--glass); display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1;}
+        .footer-col h3 { font-family: 'Cinzel'; color: var(--pink); margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; font-size: 0.85rem; opacity: 0.7; }
+footer a {
+    text-decoration: none;
+    color: ghostwhite;
+}
+        /* --- 6. LIGHTBOX --- */
+        #lightbox {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 3000;
+            display: none; justify-content: center; align-items: center; flex-direction: column;
+        }
+        #lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; }
+        .close-lb { position: absolute; top: 30px; right: 40px; font-size: 3rem; cursor: pointer; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        @media (max-width: 768px) {
+            .ba-container { height: 350px; }
+            .depth-container { height: 400px; }
+            .f-card { width: 260px; height: 350px; }
+            .f-card.prev { transform: translate3d(-150px, 0, -100px) scale(0.75); }
+            .f-card.next { transform: translate3d(150px, 0, -100px) scale(0.75); }
+        }
+        
+.social-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.social-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(75, 2, 82, 0.05); /* Soft glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.social-item svg {
+  width: 30px;
+  height: 30px;
+  fill: purple; /* Metallic Gold */
+  transition: fill 0.3s ease;
+}
+
+/* Premium Hover Effect */
+.social-item:hover {
+  background:  #F31365;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.social-item:hover svg {
+  fill: silver; /* Icon turns white when gold background appears */
+}
+    </style>
+</head>
+<body id="body" class="no-scroll">
+
+    <div id="loader">
+        <svg class="d-loader-svg" viewBox="0 0 100 100">
+            <path class="d-path" d="M30,20 H50 C75,20 75,80 50,80 H30 V20 Z" />
+        </svg>
+        <div class="text">D-SILVER</div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">D•SILVER</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li style="color: var(--pink); text-decoration: underline;"><a style="color: var(--pink);" href="gallery.html">Gallery</a></li>
+            <li style="background: var(--pink); box-shadow: 0 0 15px var(--pink); border-radius: 3px;"><a href="apply.html">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-banner">
+        <h1>D-Silver Beauty Gallery</h1>
+        <p>Explore the creativity and professional beauty work produced by our students.</p>
+    </section>
+
+    <section class="featured-slider">
+        <div class="depth-container" id="featuredSlider">
+            <div class="f-card active" style="background-image: url('img1.jpg')"></div>
+            <div class="f-card next" style="background-image: url('img4.jpg')"></div>
+            <div class="f-card" style="background-image: url('img2.jpg')"></div>
+            <div class="f-card" style="background-image: url('img5.jpg')"></div>
+            <div class="f-card prev" style="background-image: url('img6.jpg')"></div>
+        </div>
+        <div class="slider-dots" id="dots">
+            <div class="s-dot active"></div><div class="s-dot"></div><div class="s-dot"></div><div class="s-dot"></div><div class="s-dot"></div>
+        </div>
+    </section>
+
+    <section class="grid-section">
+        <div class="filters" id="filterContainer">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="makeup">Makeup</button>
+            <button class="filter-btn" data-category="hair">Hair</button>
+            <button class="filter-btn" data-category="nails">Nails</button>
+            <button class="filter-btn" data-category="training">Training</button>
+        </div>
+
+        <div class="masonry-grid" id="mainGrid">
+            <div class="grid-item" data-category="makeup" onclick="openLightbox(this)">
+                <img src="img17.jpeg">
+                <div class="grid-overlay"><h4>Bridal Makeup</h4><p>Student Portfolio</p></div>
+            </div>
+ <div class="grid-item" data-category="makeup" onclick="openLightbox(this)">
+                <img src="img16.jpeg">
+                <div class="grid-overlay"><h4>Beauty Therapy</h4><p>Advanced Skincare</p></div>
+            </div>
+            <div class="grid-item" data-category="nails" onclick="openLightbox(this)">
+                <img src="image2.7.jpeg">
+                <div class="grid-overlay"><h4>Precision Nails</h4><p>Acrylic Course</p></div>
+            </div>
+            <div class="grid-item" data-category="nails" onclick="openLightbox(this)">
+                <img src="image2.9.jpeg">
+                <div class="grid-overlay"><h4>Precision Nails</h4><p>Acrylic Course</p></div>
+            </div>
+            <div class="grid-item" data-category="hair" onclick="openLightbox(this)">
+                <img src="image2.1.jpeg">
+                <div class="grid-overlay"><h4>Hairdressing</h4><p>Styling Workshop</p></div>
+            </div>
+            <div class="grid-item" data-category="hair" onclick="openLightbox(this)">
+                <img src="image2.2.jpeg">
+                <div class="grid-overlay"><h4>Hairdressing</h4><p>Styling Workshop</p></div>
+            </div>
+            <div class="grid-item" data-category="makeup" onclick="openLightbox(this)">
+                <img src="WhatsApp Image 2026-04-22 at 2.17.48 PM.jpeg">
+                <div class="grid-overlay"><h4>Creative Updo</h4><p>Makeup Artistry</p></div>
+            </div>
+            <div class="grid-item" data-category="training" onclick="openLightbox(this)">
+                <img src="img22.jpg">
+                <div class="grid-overlay"><h4>Live Teaching</h4><p>Masterclass Demo</p></div>
+            </div>
+            <div class="grid-item" data-category="training" onclick="openLightbox(this)">
+                <img src="image2.8.jpeg">
+                <div class="grid-overlay"><h4>Live Teaching</h4><p>Masterclass Demo</p></div>
+            </div>
+            <div class="grid-item" data-category="training" onclick="openLightbox(this)">
+                <img src="img23.jpg">
+                <div class="grid-overlay"><h4>Modern Studio</h4><p>Campus Environment</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox">
+        <span class="close-lb" onclick="closeLightbox()">&times;</span>
+        <img id="lbImg" src="">
+        <h3 id="lbCap" style="margin-top:20px; font-family:'Cinzel';"></h3>
+    </div>
+
+    <section class="ba-section">
+        <h2 style="font-family:'Cinzel'; font-size:2.5rem;">Visual Evolution</h2>
+        <p>Before & After Transformations</p>
+        <div class="ba-container">
+            <div class="ba-img" style="background-image: url('img24.jpg')"></div>
+            <div class="ba-img ba-before" id="baBefore" style="background-image: url('img25.jpg')"></div>
+            <input type="range" min="0" max="100" value="50" class="ba-range" oninput="slideTransformation(this.value)">
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="t-slide active">
+            <blockquote>"D-Silver gave me the confidence to start my career."</blockquote>
+            <cite>Vernonicah W Ndung'u — Professional Massage Therapist</cite>
+        </div>
+        <div class="t-slide">
+            <blockquote>"The practical training environment is world-class."</blockquote>
+            <cite>Maria W. wairimu — Hair Specialist</cite>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 style="font-family:'Cinzel'; font-size:3rem;">Start Your Beauty Career Today</h2>
+        <a href="apply.html" class="cta-btn">Enrol Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-col">
+            <h3>D-Silver</h3>
+            <p>Elevating industry standards through elite beauty education in Kenya.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">Success Stories</a></li></ul>
+        </div>
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <ul><li></li><li>+254 786 915 715</li><li>info@dsilverbeauty.com</li></ul>
+        </div>
+        <div class="social-container">
+  <a href="https://www.facebook.com/share/1GwAQxnSga/" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978 1.602 0 2.44.119 2.84.173v3.416h-2.051c-1.423 0-1.696.675-1.696 1.666v2.303h3.726l-.571 3.667h-3.155v7.98h-4.95z"/></svg>
+  </a>
+
+<a href="https://www.instagram.com/d_silver_beauty_college?igsh=NzNtZmZiOHJnbW4z" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24"><path d="M7.5 2C4.5 2 2 4.5 2 7.5v9C2 19.5 4.5 22 7.5 22h9c3 0 5.5-2.5 5.5-5.5v-9C22 4.5 19.5 2 16.5 2h-9zm0 2h9c1.9 0 3.5 1.6 3.5 3.5v9c0 1.9-1.6 3.5-3.5 3.5h-9C5.6 20 4 18.4 4 16.5v-9C4 5.6 5.6 4 7.5 4zm4.5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+  </a>
+
+<a href="https://www.tiktok.com/@d_silver_beauty_college_?_r=1&amp;_t=ZS-95bvbtgpvso" target="_blank" class="social-item">
+    <svg viewBox="0 0 32 32">
+        <path d="M24 10.5a5.5 5.5 0 0 1-3.5-1.25V18a7.5 7.5 0 1 1-7.5-7.5h2v3h-2a4.5 4.5 0 1 0 4.5 4.5V3h3a5.5 5.5 0 0 0 3.5 7.5z"/>
+    </svg>
+</a>
+
+
+<a href="https://wa.me/254725786915715?text=Hello%20D-Silver%20Beauty%20College,%20I%20would%20like%20to%20inquire%20about%20your%20courses." 
+   target="_blank" 
+   class="social-item">
+    <svg viewBox="0 0 500 500">
+        <path d="M250 80C156.1 80 80 156.1 80 250C80 283.4 89.7 314.5 106.3 340.8L80 420L161.7 398.6C187.3 412.3 217.5 420 250 420C343.9 420 420 343.9 420 250C420 156.1 343.9 80 250 80Z"/>
+        <path d="M331.1 298.5C327.3 296.6 308.5 287.3 305 286C301.5 284.7 299 284.1 296.5 287.9C294 291.7 286.9 300.3 284.7 302.8C282.5 305.3 280.3 305.6 276.5 303.7C272.7 301.8 260.5 297.8 246.1 284.9C234.9 274.9 227.3 262.5 225.1 258.7C222.9 254.9 224.9 252.8 226.8 250.9C228.5 249.2 230.6 246.4 232.5 244.2C234.4 242 235 240.4 236.3 237.9C237.6 235.4 236.9 233.2 236 231.3C235.1 229.4 227.6 210.9 224.5 203.4C221.4 196.1 218.3 197.1 216 197C213.8 196.9 211.3 196.9 208.8 196.9C206.3 196.9 202.2 197.8 198.7 201.6C195.2 205.4 185.3 214.7 185.3 233.8C185.3 252.9 199.2 271.3 201.1 273.9C203 276.5 228.4 315.8 267.3 332.6C276.5 336.6 283.8 339.1 289.4 340.9C298.7 343.8 307.2 343.4 313.9 342.4C321.4 341.3 337 332.9 340.3 323.7C343.6 314.5 343.6 306.6 342.6 304.9C341.6 303.1 339.1 302.1 335.3 300.2L331.1 298.5Z" fill="pink"/>
+    </svg>
+</a>
+
+</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+            // --- LOADER LOGIC ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                body.classList.remove('no-scroll');
+                setTimeout(() => loader.style.display = 'none', 1000);
+            }, 3000); // 3-second cycle for the D-animation
+        });
+        // --- 1. PARTICLES ---
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#d42a7d" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3 },
+                "size": { "value": 3 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#d42a7d", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2, "out_mode": "out" }
+            },
+            "retina_detect": true
+        });
+
+        // --- 2. LOADER HANDLER (MATCHING ABOUT PAGE) ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                document.body.classList.remove('no-scroll');
+                setTimeout(() => loader.style.display = 'none', 1000);
+            }, 3500); // 3.5s allows animations to complete
+        });
+
+        // --- 3. NAVIGATION ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            const active = navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll', active);
+        });
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+        // --- CLICK OUTSIDE TO CLOSE ---
+window.addEventListener('click', (e) => {
+    // Check if the menu is currently active
+    if (navLinks.classList.contains('active')) {
+        /* If the click was NOT on the navLinks AND 
+           NOT on the hamburger button (or its spans), 
+           then close the menu.
+        */
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
+    }
+});
+
+
+  // --- 4. GALLERY LOGIC (FILTER, SLIDER, LIGHTBOX, B&A) ---
+        // Filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const gridItems = document.querySelectorAll('.grid-item');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filterValue = btn.getAttribute('data-category');
+                gridItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        item.style.animation = 'fadeIn 0.5s ease forwards';
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Depth Slider
+        let fIdx = 0;
+        const fCards = document.querySelectorAll('.f-card');
+        const fDots = document.querySelectorAll('.s-dot');
+        function rotateFeatured() {
+            fIdx = (fIdx + 1) % fCards.length;
+            fCards.forEach((c, i) => {
+                c.className = 'f-card';
+                fDots[i].className = 's-dot';
+            });
+            fCards[fIdx].classList.add('active');
+            fCards[(fIdx - 1 + fCards.length) % fCards.length].classList.add('prev');
+            fCards[(fIdx + 1) % fCards.length].classList.add('next');
+            fDots[fIdx].classList.add('active');
+        }
+        setInterval(rotateFeatured, 4000);
+
+        // Lightbox
+        function openLightbox(el) {
+            document.getElementById('lbImg').src = el.querySelector('img').src;
+            document.getElementById('lbCap').innerText = el.querySelector('h4').innerText;
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.classList.add('no-scroll');
+        }
+        function closeLightbox() { 
+            document.getElementById('lightbox').style.display = 'none'; 
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Before/After
+        function slideTransformation(val) { document.getElementById('baBefore').style.width = val + '%'; }
+
+        // Testimonials
+        let tIdx = 0;
+        const tSlides = document.querySelectorAll('.t-slide');
+        setInterval(() => {
+            tSlides[tIdx].classList.remove('active');
+            tIdx = (tIdx + 1) % tSlides.length;
+            tSlides[tIdx].classList.add('active');
+        }, 5000);
+    </script>
+</body>
+</html>

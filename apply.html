@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHMDRYFY14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHMDRYFY14');
+</script>
+    <meta charset="UTF-8">
+     <meta name="google-site-verification" content="ESpN68ZcAyPgJSRh_aqdPPp_czjKNdqTWuhKzK4y1hw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | D-Silver Beauty College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Your Public ID
+            emailjs.init("pj-UQUHhSh7vIUq94");
+        })();
+    </script>
+
+    <style>
+        :root {
+            --pink: #d42a7d;
+            --dark-pink: #a31e5f;
+            --purple: #0f051a;
+            --deep-purple: #050208;
+            --black: #050208;
+            --silver: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.05);
+            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--black); 
+            color: white; 
+            font-family: 'Montserrat', sans-serif; 
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        /* --- LOADER --- */
+        #loader {
+            position: fixed; inset: 0; background: var(--purple); z-index: 9999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s;
+        }
+        #loader.fade-out { opacity: 0; visibility: hidden; }
+        .d-loader-svg { width: 120px; height: 120px; margin-bottom: 20px; }
+        .d-path {
+            fill: none; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 300; stroke-dashoffset: 300;
+            animation: drawD 3s infinite alternate, changeColor 6s infinite;
+        }
+        @keyframes drawD { 0% { stroke-dashoffset: 300; } 100% { stroke-dashoffset: 0; } }
+        @keyframes changeColor {
+            0%, 100% { stroke: var(--pink); filter: drop-shadow(0 0 8px var(--pink)); }
+            50% { stroke: var(--silver); filter: drop-shadow(0 0 12px var(--silver)); }
+        }
+        .loader-text { font-family: 'Cinzel'; color: var(--silver); letter-spacing: 5px; font-size: 1.2rem; animation: pulseText 1.5s infinite; }
+        @keyframes pulseText { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+        body.no-scroll { overflow: hidden; height: 100vh; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 25px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; transition: var(--transition); backdrop-filter: blur(10px);
+        }
+        nav.scrolled { background: rgba(15, 5, 26, 0.95); padding: 15px 5%; border-bottom: 1px solid rgba(212, 42, 125, 0.3); }
+        .logo { font-family: 'Cinzel'; font-weight: 700; font-size: 1.5rem; color: var(--silver); text-decoration: none; letter-spacing: 4px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; font-weight: 600; }
+        .nav-links a:hover { color: var(--pink); text-shadow: 0 0 10px var(--pink); }
+        .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 2000; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: white; margin: 6px; transition: 0.4s; }
+        
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 80%; background: var(--purple); flex-direction: column; justify-content: center; transition: 0.5s; z-index: 1500; }
+            .nav-links.active { right: 0; }
+        }
+
+        /* --- HERO --- */
+        .hero {
+             height: 100vh; 
+             width: 100%;
+              position: relative; 
+              background: radial-gradient(circle at top right, #2e0f2a 0%, var(--black) 100%);
+               display: flex;
+                flex-direction: column; 
+                justify-content: center; 
+                align-items: center; 
+                text-align: center; 
+                overflow: hidden;
+                 padding-top: 80px;
+                  z-index: 1; }
+        .hero h1 { 
+            font-family: 'Cinzel';
+             font-size: clamp(2.2rem, 6vw, 4.5rem); 
+             margin-bottom: 15px;
+              letter-spacing: 4px; 
+            }
+        .hero p { 
+            color: var(--silver);
+             max-width: 700px; 
+             font-weight: 300;
+              letter-spacing: 1px;
+               margin-bottom: 30px; 
+               padding: 0 20px;}
+        .hero-btns {
+             display: flex; 
+             gap: 15px;
+              align-items: 
+              center;
+               justify-content: center; 
+            }
+        
+        /* --- FORM & SUCCESS CARD --- */
+        .apply-container {
+             padding: 60px 6%; 
+             max-width: 1000px;
+              margin: 0 auto;
+               position: relative;
+                z-index: 1;
+                 min-height: 500px; }
+        .apply-form { 
+            background: rgba(255,255,255,0.02);
+             border: 1px solid deeppink;
+              padding: 50px;
+               border-radius: 30px; 
+               backdrop-filter: blur(20px); 
+               display: grid;
+                grid-template-columns: 1fr 1fr; gap: 25px; }
+        .full-width { grid-column: span 2; }
+        
+        .input-box { display: flex; flex-direction: column; gap: 8px; }
+        .input-box label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--pink); font-weight: 600; }
+        .input-box input, .input-box select, .input-box textarea { 
+            background: rgba(255,255,255,0.05); 
+            border: 1.5px solid rgba(212, 42, 125, 0.3); 
+            padding: 15px 18px; 
+            border-radius: 12px; 
+            color: white; 
+            font-family: 'Montserrat'; 
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .input-box input::placeholder, .input-box textarea::placeholder { 
+            color: rgba(255,255,255,0.4); 
+            font-weight: 300;
+        }
+        .input-box select { 
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d42a7d' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 35px;
+        }
+        .input-box select option {
+            background: var(--deep-purple);
+            color: white;
+        }
+        .input-box input:focus, .input-box select:focus, .input-box textarea:focus { 
+            outline: none; 
+            border-color: var(--pink); 
+            box-shadow: 0 0 20px rgba(212, 42, 125, 0.3), inset 0 0 15px rgba(212, 42, 125, 0.05); 
+            background: rgba(212, 42, 125, 0.08); 
+        }
+        .input-box textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn { 
+            background: linear-gradient(135deg, var(--pink), #d42a7d);
+            color: white; 
+            border: none; 
+            padding: 18px 40px; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 8px 20px rgba(212, 42, 125, 0.4);
+            text-decoration: none;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        .submit-btn:hover { 
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 42, 125, 0.5);
+            background: linear-gradient(135deg, #c21a6f, #e63889);
+        }
+        .submit-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline { padding: 18px 40px; border: 1px solid var(--pink); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .btn-outline:hover { background: var(--pink); box-shadow: 0 0 20px var(--pink); }
+
+        /* Sections */
+        .intro { padding: 80px 6%; text-align: center; position: relative; z-index: 1; }
+        .intro h2 { font-family: 'Cinzel'; font-size: 2.2rem; color: var(--pink); margin-bottom: 20px; }
+        .steps { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
+        .step { max-width: 250px; }
+        .step-num { font-family: 'Cinzel'; font-size: 2rem; color: var(--pink); display: block; margin-bottom: 10px; }
+
+        .features { padding: 80px 6%; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; position: relative; z-index: 1; }
+        .feat-card { background: var(--glass); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); }
+        .feat-card:hover { border-color: var(--pink); transform: translateY(-10px); background: rgba(212, 42, 125, 0.03); }
+
+        .testimonials { padding: 100px 6%; text-align: center; background: #080310; position: relative; z-index: 1; }
+        .t-slide { display: none; max-width: 800px; margin: 0 auto; animation: fadeIn 1s; }
+        .t-slide.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .cta { padding: 120px 6%; text-align: center; background: linear-gradient(rgba(212, 42, 125, 0.2), var(--black)); position: relative; z-index: 1; }
+        footer { padding: 80px 6% 40px; background: #030105; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; border-top: 1px solid var(--glass); position: relative; z-index: 1; }
+        .footer-col h4 { font-family: 'Cinzel'; color: var(--pink); margin-bottom: 25px; }
+
+        #scrollTop { position: fixed; bottom: 30px; right: 30px; background: var(--pink); width: 50px; height: 50px; border-radius: 50%; display: none; justify-content: center; align-items: center; cursor: pointer; z-index: 1000; }
+
+        @media (max-width: 768px) { .apply-form { grid-template-columns: 1fr; padding: 30px; } .full-width { grid-column: span 1; } }
+        .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 40%; /* Adjust this percentage to change map height */
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+    
+    /* THE PINK MAGIC: */
+    filter: grayscale(100%) invert(90%) sepia(100%) saturate(1000%) hue-rotate(285deg) brightness(80%) contrast(100%);
+    
+    /* Smooth transition when hovering */
+    transition: filter 0.5s ease;
+}
+    @media (max-width: 768px) {
+        .map-container { padding-bottom: 75%; } /* Taller map for mobile */
+    }
+    .direction a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        
+    }
+            .quick-actions { padding: 60px 6%; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; position: relative; z-index: 1; }
+        .action-btn {
+            display: flex; align-items: center; gap: 10px; padding: 15px 35px;
+            border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+            transition: 0.3s; border: 1px solid var(--pink); color: white;
+        }
+        .action-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--pink); }
+
+        .cta { 
+            padding: 120px 6%; text-align: center; 
+            background: linear-gradient(rgba(15, 5, 26, 0.5), rgba(15, 5, 26, 0.5)), url('/D-silver /img22.jpg');
+            background-size: cover; background-position: center; border-top: 1px solid var(--glass);
+            position: relative; z-index: 1;
+        }
+        .cta h2 { font-family: 'Cinzel'; font-size: 3rem; margin-bottom: 20px; }
+        .cta-btns { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+footer { padding: 80px 6% 40px; background: #030105; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; }
+        .footer-col h4 { font-family: 'Cinzel'; color: var(--pink); margin-bottom: 25px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; font-size: 0.85rem; opacity: 0.6; transition: 0.3s; cursor: pointer; }
+        .footer-col li:hover { opacity: 1; color: var(--pink); }
+.footer-col a{ 
+    text-decoration: none;
+    color: inherit;
+}
+        
+.social-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.social-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(75, 2, 82, 0.05); /* Soft glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.social-item svg {
+  width: 30px;
+  height: 30px;
+  fill: purple; /* Metallic Gold */
+  transition: fill 0.3s ease;
+}
+
+/* Premium Hover Effect */
+.social-item:hover {
+  background:  #F31365;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.social-item:hover svg {
+  fill: silver; /* Icon turns white when gold background appears */
+}
+    </style>
+</head>
+<body class="no-scroll"> 
+
+    <div id="loader">
+        <svg class="d-loader-svg" viewBox="0 0 100 100"><path class="d-path" d="M30,20 H50 C75,20 75,80 50,80 H30 V20 Z" /></svg>
+        <p class="loader-text">D-SILVER</p>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">D•SILVER</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li style="background: var(--pink); box-shadow: 0 0 15px var(--pink); border-radius: 3px;"><a href="apply.html">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Apply to D-Silver</h1>
+        <p>Your professional beauty career is just one step away. Join Kenya's most prestigious beauty institution today.</p>
+        <div class="hero-btns">
+            <a href="#form" class="submit-btn">Apply Now</a>
+            <a href="courses.html" class="btn-outline">View Courses</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <h2>Begin Your Journey</h2>
+        <div class="steps">
+            <div class="step"><span class="step-num">01</span><h3>Fill Form</h3><p>Complete the application details with your course of choice.</p></div>
+            <div class="step"><span class="step-num">02</span><h3>Submit</h3><p>Double-check your information and send your application.</p></div>
+            <div class="step"><span class="step-num">03</span><h3>Enroll</h3><p>Our team will contact you within 24 hours for the next steps.</p></div>
+        </div>
+    </section>
+
+    <section class="apply-container" id="form">
+        <form class="apply-form" id="mainForm">
+            <div class="input-box">
+                <label>Full Name</label>
+                <input type="text" name="user_name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-box">
+                <label>Email Address</label>
+                <input type="email" name="user_email" placeholder="example@email.com" required>
+            </div>
+            <div class="input-box">
+                <label>Phone Number</label>
+                <input type="tel" name="user_phone" placeholder="+254 XXX XXX XXX" required>
+            </div>
+            <div class="input-box">
+                <label>Course Interested In</label>
+                <select name="user_course" required>
+                    <option value="">Choose a course</option>
+                    <option value="Cosmetology">Cosmetology</option>
+                    <option value="Nail Technology">Nail Technology</option>
+                    <option value="Facial and Waxing">Facial and Waxing</option>
+                    <option value="Makeup">Makeup</option>
+                    <option value="Massage">Massage</option>
+                    <option value="Barbering">Barbering and Hair Cutting</option>
+                    <option value="Dreadlocs">Dreadlocs and Artificial locs</option>
+                    <option value="Wig Installation">Weave and Wig installation</option>
+                    <option value="Braiding">Braiding</option>
+                    <option value="Computer-programming">Computer Programming</option>
+                    <option value="Computer Packages">Computer Packages</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label>Gender</label>
+                <select name="user_gender" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label>Study Schedule</label>
+                <select name="user_schedule" required>
+                    <option value="full-time">Full-time (Daily)</option>
+                    <option value="part-time">Part-time (Weekends/Evenings)</option>
+                </select>
+            </div>
+            <div class="input-box full-width">
+                <label>Message / Career Goals</label>
+                <textarea name="user_message" rows="4" placeholder="Tell us why you want to join D-Silver..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn full-width" id="submitBtn">Submit Application</button>
+        </form>
+        <div id="successCard" style="display:none; text-align:center; padding: 60px 30px; background: rgba(255,255,255,0.02); border: 1px solid var(--pink); border-radius: 30px; backdrop-filter: blur(20px); animation: fadeIn 0.8s forwards;">
+            <h2 style="font-family:'Cinzel'; color: var(--pink); margin-bottom: 20px; font-size: 2.5rem;">Application Sent!</h2>
+            <p style="font-size: 1.1rem; color: var(--silver); margin-bottom: 30px;">Thank you for choosing D-Silver. We have sent a confirmation email to your inbox. Our team will call you within 24 hours.</p>
+            <button onclick="location.reload()" class="btn-outline" style="cursor:pointer; background: deeppink;">Apply for another course</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feat-card"><h3>Elite Trainers</h3><p>Learn from industry masters with years of experience.</p></div>
+        <div class="feat-card"><h3>Practical Focus</h3><p>90% hands-on training with real-world models.</p></div>
+        <div class="feat-card"><h3>Certified Merit</h3><p>Globally recognized certifications.</p></div>
+        <div class="feat-card"><h3>Job Linkage</h3><p>We connect our top students with luxury salons.</p></div>
+    </section>
+
+    <section class="testimonials">
+        <div class="t-slide active">
+            <span style="color:#ffd700;">★★★★★</span>
+            <blockquote>"Applying to D-Silver was the turning point of my career. I'm now a head stylist!"</blockquote>
+            <cite>Peninah W. Ngaruiya — Class of 2024</cite>
+        </div>
+        <div class="t-slide">
+            <span style="color:#ffd700;">★★★★★</span>
+            <blockquote>"The instructors are incredibly knowledgeable and supportive. I gained real skills here."</blockquote>
+            <cite>Lucy W. Ndugu — Makeup Specialist</cite>
+        </div>
+        <div class="t-slide">
+            <span style="color:#ffd700;">★★★★★</span>
+            <blockquote>"Best decision ever. The training is practical, intense, and truly industry-standard."</blockquote>
+            <cite>Mary Wairimu Waweru — Nail Technician</cite>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Your Beauty Career Starts Here</h2>
+        <div class="hero-btns">
+            <a href="tel:+254786915715" class="btn-outline">Call Now</a>
+            <a href="https://wa.me/254786915715" class="btn-outline">WhatsApp Us</a>
+        </div>
+    </section>
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.044158933355!2d36.64166257577543!3d-1.128458135478496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f2540409f7767%3A0xee15883d78107051!2sEquity%20Bank%20Limuru%20Branch!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<div class="direction">
+<a href="https://www.google.com/maps/dir/?api=1&destination=Equity+Bank+Limuru+Branch" 
+   target="_blank" 
+   class="action-btn" 
+   style="display: flex; justify-content: center; background: #d42a7d; border: none; padding: 18px 30px;">
+   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+       <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+   </svg>
+   Start GPS Navigation <br /><span style="font-weight: bold; font-size: smaller;">Equity Bank Building, 2nd Floor, Limuru </span>
+   
+</a>
+</div>
+    </section>
+    <section class="quick-actions">
+<a href="tel:+254786915715" class="action-btn call-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 c-9.39-.9-16.92-8.43-17.82-17.82A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.37 1.78.72 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.29a2 2 0 0 1 2.11-.45c.83.35 1.71.6 2.61.72A2 2 0 0 1 22 16.92z" />
+    </svg> 
+    Call Now
+</a>
+        <a href="https://wa.me/254786915715?text=Hello%20I%20would%20like%20to%20get%20more%20information" target="_blank" class="action-btn whatsapp"> <svg width="40" height="40" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><circle cx="250" cy="250" r="250" fill="black"/><path d="M250 80C156.1 80 80 156.1 80 250C80 283.4 89.7 314.5 106.3 340.8L80 420L161.7 398.6C187.3 412.3 217.5 420 250 420C343.9 420 420 343.9 420 250C420 156.1 343.9 80 250 80Z" fill="deeppink"/><path d="M331.1 298.5C327.3 296.6 308.5 287.3 305 286C301.5 284.7 299 284.1 296.5 287.9C294 291.7 286.9 300.3 284.7 302.8C282.5 305.3 280.3 305.6 276.5 303.7C272.7 301.8 260.5 297.8 246.1 284.9C234.9 274.9 227.3 262.5 225.1 258.7C222.9 254.9 224.9 252.8 226.8 250.9C228.5 249.2 230.6 246.4 232.5 244.2C234.4 242 235 240.4 236.3 237.9C237.6 235.4 236.9 233.2 236 231.3C235.1 229.4 227.6 210.9 224.5 203.4C221.4 196.1 218.3 197.1 216 197C213.8 196.9 211.3 196.9 208.8 196.9C206.3 196.9 202.2 197.8 198.7 201.6C195.2 205.4 185.3 214.7 185.3 233.8C185.3 252.9 199.2 271.3 201.1 273.9C203 276.5 228.4 315.8 267.3 332.6C276.5 336.6 283.8 339.1 289.4 340.9C298.7 343.8 307.2 343.4 313.9 342.4C321.4 341.3 337 332.9 340.3 323.7C343.6 314.5 343.6 306.6 342.6 304.9C341.6 303.1 339.1 302.1 335.3 300.2L331.1 298.5Z" fill="black"/></svg> WhatsApp Us</a>
+    </section>
+        <footer>
+        <div class="footer-col">
+            <h4>D•SILVER</h4>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Premier beauty training institution dedicated to nurturing world-class talent.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Courses</h4>
+            <ul><li>Makeup Artistry</li><li>Nail Technology</li><li>Hair Styling</li><li>Skin Aesthetics</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Location</h4>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Limuru Equity bank Building 3rd Floor Kenya</p>
+        </div>
+        <div class="social-container">
+  <a href="https://www.facebook.com/share/1GwAQxnSga/" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978 1.602 0 2.44.119 2.84.173v3.416h-2.051c-1.423 0-1.696.675-1.696 1.666v2.303h3.726l-.571 3.667h-3.155v7.98h-4.95z"/></svg>
+  </a>
+
+<a href="https://www.instagram.com/d_silver_beauty_college?igsh=NzNtZmZiOHJnbW4z" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24"><path d="M7.5 2C4.5 2 2 4.5 2 7.5v9C2 19.5 4.5 22 7.5 22h9c3 0 5.5-2.5 5.5-5.5v-9C22 4.5 19.5 2 16.5 2h-9zm0 2h9c1.9 0 3.5 1.6 3.5 3.5v9c0 1.9-1.6 3.5-3.5 3.5h-9C5.6 20 4 18.4 4 16.5v-9C4 5.6 5.6 4 7.5 4zm4.5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+  </a>
+
+<a href="https://www.tiktok.com/@d_silver_beauty_college_?_r=1&amp;_t=ZS-95bvbtgpvso" target="_blank" class="social-item">
+    <svg viewBox="0 0 32 32">
+        <path d="M24 10.5a5.5 5.5 0 0 1-3.5-1.25V18a7.5 7.5 0 1 1-7.5-7.5h2v3h-2a4.5 4.5 0 1 0 4.5 4.5V3h3a5.5 5.5 0 0 0 3.5 7.5z"/>
+    </svg>
+</a>
+
+
+<a href="https://wa.me/254725786915715?text=Hello%20D-Silver%20Beauty%20College,%20I%20would%20like%20to%20inquire%20about%20your%20courses." 
+   target="_blank" 
+   class="social-item">
+    <svg viewBox="0 0 500 500">
+        <path d="M250 80C156.1 80 80 156.1 80 250C80 283.4 89.7 314.5 106.3 340.8L80 420L161.7 398.6C187.3 412.3 217.5 420 250 420C343.9 420 420 343.9 420 250C420 156.1 343.9 80 250 80Z"/>
+        <path d="M331.1 298.5C327.3 296.6 308.5 287.3 305 286C301.5 284.7 299 284.1 296.5 287.9C294 291.7 286.9 300.3 284.7 302.8C282.5 305.3 280.3 305.6 276.5 303.7C272.7 301.8 260.5 297.8 246.1 284.9C234.9 274.9 227.3 262.5 225.1 258.7C222.9 254.9 224.9 252.8 226.8 250.9C228.5 249.2 230.6 246.4 232.5 244.2C234.4 242 235 240.4 236.3 237.9C237.6 235.4 236.9 233.2 236 231.3C235.1 229.4 227.6 210.9 224.5 203.4C221.4 196.1 218.3 197.1 216 197C213.8 196.9 211.3 196.9 208.8 196.9C206.3 196.9 202.2 197.8 198.7 201.6C195.2 205.4 185.3 214.7 185.3 233.8C185.3 252.9 199.2 271.3 201.1 273.9C203 276.5 228.4 315.8 267.3 332.6C276.5 336.6 283.8 339.1 289.4 340.9C298.7 343.8 307.2 343.4 313.9 342.4C321.4 341.3 337 332.9 340.3 323.7C343.6 314.5 343.6 306.6 342.6 304.9C341.6 303.1 339.1 302.1 335.3 300.2L331.1 298.5Z" fill="pink"/>
+    </svg>
+</a>
+
+</div>
+    </footer>
+    <div id="scrollTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // LOADER
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('fade-out');
+                document.body.classList.remove('no-scroll');
+            }, 1500);
+        });
+
+        // PARTICLES
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 60 }, "color": { "value": "#d42a7d" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 3 }, "line_linked": { "enable": true, "color": "#d42a7d", "opacity": 0.5 }, "move": { "enable": true, "speed": 2 } }
+        });
+
+        // FORM SUBMISSION WITH EMAILJS
+        document.getElementById('mainForm').onsubmit = function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const form = document.getElementById('mainForm');
+            const successCard = document.getElementById('successCard');
+            
+            btn.innerHTML = "Sending Application...";
+            btn.style.pointerEvents = "none";
+            btn.style.opacity = "0.7";
+
+            // Service ID: service_ | Template ID: template_
+            emailjs.sendForm('service_rjvn2al', 'template_jq9j98e', this)
+                .then(function() {
+                    // HIDE FORM AND SHOW SUCCESS CARD
+                    form.style.display = 'none';
+                    successCard.style.display = 'block';
+                    window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+                }, function(error) {
+                    alert("Submission failed. Please check your connection or call us.");
+                    btn.innerHTML = "Submit Application";
+                    btn.style.pointerEvents = "auto";
+                    btn.style.opacity = "1";
+                    console.log('Error:', error);
+                });
+        };
+
+        // NAV SCROLL
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('scrollTop').style.display = window.scrollY > 500 ? 'flex' : 'none';
+        });
+
+        // HAMBURGER
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        // --- CLICK OUTSIDE TO CLOSE ---
+window.addEventListener('click', (e) => {
+    // Check if the menu is currently active
+    if (navLinks.classList.contains('active')) {
+        /* If the click was NOT on the navLinks AND 
+           NOT on the hamburger button (or its spans), 
+           then close the menu.
+        */
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
+    }
+});
+
+        // Testimonials Auto-Slide
+        let tIdx = 0;
+        const tSlides = document.querySelectorAll('.t-slide');
+        setInterval(() => {
+            tSlides[tIdx].classList.remove('active');
+            tIdx = (tIdx + 1) % tSlides.length;
+            tSlides[tIdx].classList.add('active');
+        }, 5000);
+
+    </script>
+</body>
+</html>

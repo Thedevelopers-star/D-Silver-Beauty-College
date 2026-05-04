@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHMDRYFY14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHMDRYFY14');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="google-site-verification" content="ESpN68ZcAyPgJSRh_aqdPPp_czjKNdqTWuhKzK4y1hw" />
+    <title>Beauty Courses in Limuru | Hairdressing, Makeup & Cosmetology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-pink: #d42a7d;
+            --deep-purple: #0f051a;
+            --accent-purple: #1a0b2e;
+            --silver: #e0e0e0;
+            --glow: 0 0 20px rgba(212, 42, 125, 0.6);
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--deep-purple); 
+            color: white; 
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- 1. NEW D-ANIMATED LOADER --- */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--deep-purple);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .d-loader-svg {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .d-path {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawD 3s infinite alternate, changeColor 6s infinite;
+        }
+
+        @keyframes drawD {
+            0% { stroke-dashoffset: 300; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        @keyframes changeColor {
+            0%, 100% { stroke: var(--dark-pink); filter: drop-shadow(0 0 8px var(--dark-pink)); }
+            50% { stroke: var(--silver); filter: drop-shadow(0 0 12px var(--silver)); }
+        }
+
+        .loader-text {
+            font-family: 'Cinzel';
+            color: var(--silver);
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+            animation: pulseText 1.5s infinite;
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* Prevent scrolling when menu or loader is open */
+        body.no-scroll { overflow: hidden; height: 100vh; }
+
+        /* --- BACKGROUND PARTICLES --- */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- REVEAL ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: 0.5s;
+        }
+        nav.scrolled {
+            background: rgba(15, 5, 26, 0.95);
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(212, 42, 125, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-family: 'Cinzel'; font-weight: 700; font-size: 1.5rem; color: var(--silver); text-decoration: none; letter-spacing: 4px; z-index: 2001; }
+        
+        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-links a { 
+            text-decoration: none; color: white; font-size: 0.8rem; letter-spacing: 2px; 
+            text-transform: uppercase; transition: 0.3s; font-weight: 600;
+        }
+        .nav-links a:hover { color: var(--dark-pink); text-shadow: var(--glow); }
+
+        .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 2001; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: white; margin: 6px; transition: 0.4s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 5, 26, 0.7), rgba(212, 42, 125, 0.6)),
+                        url('img4.jpg') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content h1 {
+            font-family: 'Cinzel';
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 20px;
+            text-shadow: var(--glow);
+            animation: fadeInGlow 2s ease-out;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            font-weight: 200;
+        }
+        .btn-group { display: flex; gap: 20px; }
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            display: inline-block;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--dark-pink);
+            color: white;
+            box-shadow: var(--glow);
+        }
+        .btn-outline {
+            border: 2px solid var(--silver);
+            color: var(--silver);
+            background: transparent;
+        }
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 25px var(--dark-pink);
+            color: white;
+        }
+
+        /* --- OUR STORY --- */
+        .section { padding: 100px 10%; position: relative; z-index: 1; }
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .story-img {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 42, 125, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .story-img img { width: 100%; display: block; transition: 0.5s; }
+        .story-text h2 { font-family: 'Cinzel'; font-size: 3rem; color: var(--dark-pink); margin-bottom: 30px; }
+        .story-text p { margin-bottom: 20px; color: rgba(255,255,255,0.8); font-size: 1.1rem; }
+
+        /* --- FOUNDER SECTION --- */
+        .founder-section {
+            text-align: center;
+        }
+        .founder-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .founder-image {
+            flex: 0 0 300px;
+        }
+        .founder-image img {
+            width: 100%;
+            border-radius: 20px;
+            border: 2px solid var(--dark-pink);
+            box-shadow: 0 20px 50px rgba(212, 42, 125, 0.3), var(--glow);
+            transition: 0.5s;
+        }
+        .founder-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(212, 42, 125, 0.5), var(--glow);
+        }
+        .founder-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        .founder-info h3 {
+            font-family: 'Cinzel';
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+            text-shadow: var(--glow);
+        }
+        .founder-title {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .founder-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .founder-section h2 {
+            font-family: 'Cinzel';
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-pink);
+            text-shadow: var(--glow);
+        }
+        @media (max-width: 768px) {
+            .founder-container {
+                gap: 30px;
+                flex-direction: column;
+            }
+            .founder-image {
+                flex: 0 0 250px;
+            }
+            .founder-info {
+                text-align: center;
+            }
+            .founder-info h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* --- MISSION & VISION --- */
+        .mission-vision {
+            background: radial-gradient(circle at center, var(--accent-purple), var(--deep-purple));
+            text-align: center;
+        }
+        .card-container { display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 500px;
+            transition: 0.5s;
+        }
+        .glass-card:hover { transform: translateY(-15px); border-color: var(--dark-pink); box-shadow: var(--glow); }
+        .glass-card h3 { font-family: 'Cinzel'; font-size: 1.8rem; margin-bottom: 20px; color: var(--dark-pink); }
+
+        /* --- FEATURE CARDS --- */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card {
+            padding: 40px;
+            text-align: center;
+            background: rgba(255,255,255,0.02);
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: 0.4s;
+        }
+        .feature-card:hover { background: rgba(212, 42, 125, 0.05); border-color: var(--dark-pink); }
+        .feature-card i { font-size: 2.5rem; color: var(--dark-pink); margin-bottom: 20px; display: block; }
+
+        /* --- COUNTERS --- */
+        .stat-section { display: flex; justify-content: space-around; background: rgba(0,0,0,0.3); padding: 80px 0; flex-wrap: wrap; gap: 40px; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3.5rem; font-weight: 700; color: var(--dark-pink); display: block; font-family: 'Cinzel'; }
+        .stat-label { text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; opacity: 0.7; }
+
+        /* --- GALLERY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: 250px;
+            gap: 15px;
+            grid-auto-flow: dense;
+        }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 15px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.6); }
+        .gallery-overlay {
+            position: absolute; inset: 0; background: rgba(212, 42, 125, 0.4);
+            display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        /* --- CTA --- */
+        .cta {
+            text-align: center;
+            background: linear-gradient(45deg, var(--deep-purple), var(--dark-pink), var(--deep-purple));
+            background-size: 200% 200%;
+            animation: gradientMove 10s infinite;
+        }
+        @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        /* --- FOOTER --- */
+        footer { padding: 80px 10% 40px; border-top: 1px solid rgba(255,255,255,0.1); background: #080310; display: flex; flex-direction: column; align-items: center; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 50px; }
+        .footer-col h4 { font-family: 'Cinzel'; margin-bottom: 25px; color: var(--dark-pink); letter-spacing: 2px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--dark-pink); padding-left: 5px; }
+
+        .scroll-top {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: var(--dark-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; opacity: 0; transition: 0.4s; z-index: 999;
+        }
+        .scroll-top.show { opacity: 1; box-shadow: var(--glow); }
+
+        @keyframes fadeInGlow { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- RESPONSIVE & MOBILE NAV --- */
+        @media (max-width: 992px) {
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -80%; height: 100vh; width: 80%;
+                background: linear-gradient(to bottom, var(--deep-purple), var(--accent-purple));
+                flex-direction: column; justify-content: center;
+                transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+                z-index: 2000; backdrop-filter: blur(20px);
+                border-left: 1px solid rgba(212, 42, 125, 0.3);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { transform: translateX(-100%); }
+            .nav-links li { margin: 15px 0; opacity: 0; transform: translateX(50px); transition: 0.4s; }
+            .nav-links.active li { opacity: 1; transform: translateX(0); }
+            .nav-links a { font-size: 1.4rem; font-family: 'Cinzel'; }
+        }
+        span img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: var(--dark-pink);
+        }
+        footer svg {
+            stroke: var(--dark-pink);
+            
+            
+        }
+        
+.social-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.social-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(75, 2, 82, 0.05); /* Soft glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.social-item svg {
+  width: 30px;
+  height: 30px;
+  fill: purple; /* Metallic Gold */
+  transition: fill 0.3s ease;
+}
+
+/* Premium Hover Effect */
+.social-item:hover {
+  background:  #F31365;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.social-item:hover svg {
+  fill: silver; /* Icon turns white when gold background appears */
+}
+    </style>
+</head>
+<body class="no-scroll"> <div id="loader">
+        <svg class="d-loader-svg" viewBox="0 0 100 100">
+            <path class="d-path" d="M30,20 H50 C75,20 75,80 50,80 H30 V20 Z" />
+        </svg>
+        <p class="loader-text">D-SILVER</p>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">D•SILVER</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li style="color: deeppink; text-decoration: underline;"><a style="color: deeppink;" href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li style="background: deeppink;  box-shadow: 2px 2px 4px 4px deeppink; border-radius: 3px;"><a href="apply.html">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Mastering Beauty</h1>
+            <p>Empowering the next generation of beauty architects with world-class precision and artistry.</p>
+            <div class="btn-group">
+                <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                <a href="apply.html" class="btn btn-outline">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="story-grid">
+            <div class="story-img reveal">
+                <img src="img6.jpg" alt="Training">
+            </div>
+            <div class="story-text reveal">
+                <h2>Our Journey</h2>
+                <p>Founded on the principle that beauty is both a science and an art, D-Silver Beauty College began as a vision to bridge the gap between passion and professional excellence.</p>
+                <p>Over the years, we have transformed from a boutique training center into a prestigious academy, recognized for producing stylists and therapists who lead the industry in Kenya.</p>
+                <p>Our curriculum is designed not just to teach techniques, but to cultivate the creative soul of every student who walks through our doors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section founder-section reveal">
+        <h2>Our Founder</h2>
+        <div class="founder-container">
+            <div class="founder-image">
+                <img src="Mr Sudi.jpg" alt="Mr Sudi - Founder of D-Silver Beauty College">
+            </div>
+            <div class="founder-info">
+                <h3>Mr Sudi</h3>
+                <p class="founder-title">Founder & Chief Visionary</p>
+                <p>With years of expertise in the beauty industry, Mr Sudi envisioned D-Silver Beauty College as a sanctuary for aspiring beauty professionals. His passion for excellence and commitment to transforming lives through education has been the driving force behind our institution's success.</p>
+                <p>Mr Sudi's leadership philosophy centers on empowerment, innovation, and the belief that every student deserves world-class training in a nurturing environment. Under his guidance, D-Silver has evolved into a beacon of beauty education excellence in Limuru and beyond.</p>
+                <p>His unwavering dedication to quality instruction and industry standards ensures that every graduate leaves D-Silver equipped with both technical mastery and the confidence to excel in their careers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section mission-vision">
+        <div class="card-container">
+            <div class="glass-card reveal">
+                <h3>Our Mission</h3>
+                <p>To provide high-quality beauty education that prepares students for successful careers by blending traditional techniques with modern industry innovations.</p>
+            </div>
+            <div class="glass-card reveal">
+                <h3>Our Vision</h3>
+                <p>To become Africa's leading beauty academy, setting the global standard for skilled professionals in hair, makeup, and skin science.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 style="text-align: center; font-family: 'Cinzel'; font-size: 2.5rem; margin-bottom: 60px;" class="reveal">The D-Silver Edge</h2>
+        <div class="feature-grid">
+            <div class="feature-card reveal">
+                <span><img src="teacher_3373446.png" alt="" /></span>
+                <h4>Expert Mentorship</h4>
+                <p>Learn from industry veterans with decades of experience in high-fashion and clinical beauty.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span><img src="gear_7188260.png" alt="" /></span>
+                <h4>Hands-On Practical</h4>
+                <p>70% of our training is practical, ensuring you graduate with confidence and a polished portfolio.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span><img src="certificate_2766905.png" alt="" /></span>
+                <h4>NITA Accredited</h4>
+                <p>Gain certifications that are recognized and respected by top salons and spas nationwide.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span><img src="personal-development_8869127.png" alt="" /></span>
+                <h4>Career Support</h4>
+                <p>We connect our top graduates directly with high-end beauty establishments for immediate employment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stat-section reveal">
+        <div class="stat-item">
+            <span class="stat-number" data-target="500">0</span>
+            <span class="stat-label">Graduates Trained</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="95">0</span>
+            <span class="stat-label">Placement Rate %</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label">Elite Courses</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span>
+            <span class="stat-label">Years of Excellence</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 style="text-align: center; font-family: 'Cinzel'; font-size: 2.5rem; margin-bottom: 60px;" class="reveal">Campus Life</h2>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item" style="grid-column: span 2; grid-row: span 2;">
+                <img src="img2.jpg" alt="Makeup">
+                <div class="gallery-overlay">Makeup Mastery</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img4.jpg" alt="Hair">
+                <div class="gallery-overlay">Styling Sessions</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img3.jpg" alt="Nails">
+                <div class="gallery-overlay">Nail Artistry</div>
+            </div>
+            <div class="gallery-item" style="grid-column: span 2;">
+                <img src="img16.jpeg" alt="Spa">
+                <div class="gallery-overlay">Skin Therapy</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta reveal">
+        <h2 style="font-family: 'Cinzel'; font-size: 3rem; margin-bottom: 20px;">Redefine Your Future</h2>
+        <p style="margin-bottom: 40px; font-size: 1.2rem;">Enroll today and join the elite ranks of beauty professionals.</p>
+        <a href="apply.html" class="btn btn-primary" style="background: white; color: var(--dark-pink); border: none;">Start Your Application</a>
+    </section>
+
+<footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">D•SILVER</a>
+                <p style="margin-top: 20px; opacity: 0.6;">Redefining beauty education through luxury, precision, and passion. Located in the heart of Limuru.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="apply.html">Apply Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Tracks</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Cosmetology</a></li>
+                    <li><a href="#">Nail Tech</a></li>
+                    <li><a href="#">Hair Design</a></li>
+                    <li><a href="#">Esthetics</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Pin shape -->
+  <path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/>
+  
+  <!-- Inner circle -->
+  <circle cx="12" cy="10" r="3"/>
+</svg> Kirk House 3, 2nd Floor, Limuru</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<!-- Phone handset -->
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+c-9.39-.9-16.92-8.43-17.82-17.82A2 2 0 0 1 4.11 2h3
+a2 2 0 0 1 2 1.72c.12.9.37 1.78.72 2.61
+a2 2 0 0 1-.45 2.11L8.09 9.91
+a16 16 0 0 0 6 6l1.47-1.29
+a2 2 0 0 1 2.11-.45c.83.35 1.71.6 2.61.72
+A2 2 0 0 1 22 16.92z"/>
+
+</svg> +254 786 915 715</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<!-- Envelope -->
+<rect x="3" y="5" width="18" height="14" rx="2" ry="2"/>
+
+<!-- Envelope flap -->
+<path d="M3 7l9 6 9-6"/>
+
+</svg>info@d-silver.edu</p>
+            </div>
+        </div>
+        <div class="social-container">
+  <a href="https://www.facebook.com/share/1GwAQxnSga/" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978 1.602 0 2.44.119 2.84.173v3.416h-2.051c-1.423 0-1.696.675-1.696 1.666v2.303h3.726l-.571 3.667h-3.155v7.98h-4.95z"/></svg>
+  </a>
+
+<a href="https://www.instagram.com/d_silver_beauty_college?igsh=NzNtZmZiOHJnbW4z" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24"><path d="M7.5 2C4.5 2 2 4.5 2 7.5v9C2 19.5 4.5 22 7.5 22h9c3 0 5.5-2.5 5.5-5.5v-9C22 4.5 19.5 2 16.5 2h-9zm0 2h9c1.9 0 3.5 1.6 3.5 3.5v9c0 1.9-1.6 3.5-3.5 3.5h-9C5.6 20 4 18.4 4 16.5v-9C4 5.6 5.6 4 7.5 4zm4.5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+  </a>
+
+<a href="https://www.tiktok.com/@d_silver_beauty_college_?_r=1&amp;_t=ZS-95bvbtgpvso" target="_blank" class="social-item">
+    <svg viewBox="0 0 32 32">
+        <path d="M24 10.5a5.5 5.5 0 0 1-3.5-1.25V18a7.5 7.5 0 1 1-7.5-7.5h2v3h-2a4.5 4.5 0 1 0 4.5 4.5V3h3a5.5 5.5 0 0 0 3.5 7.5z"/>
+    </svg>
+</a>
+
+
+<a href="https://wa.me/254725786915715?text=Hello%20D-Silver%20Beauty%20College,%20I%20would%20like%20to%20inquire%20about%20your%20courses." 
+   target="_blank" 
+   class="social-item">
+    <svg viewBox="0 0 500 500">
+        <path d="M250 80C156.1 80 80 156.1 80 250C80 283.4 89.7 314.5 106.3 340.8L80 420L161.7 398.6C187.3 412.3 217.5 420 250 420C343.9 420 420 343.9 420 250C420 156.1 343.9 80 250 80Z"/>
+        <path d="M331.1 298.5C327.3 296.6 308.5 287.3 305 286C301.5 284.7 299 284.1 296.5 287.9C294 291.7 286.9 300.3 284.7 302.8C282.5 305.3 280.3 305.6 276.5 303.7C272.7 301.8 260.5 297.8 246.1 284.9C234.9 274.9 227.3 262.5 225.1 258.7C222.9 254.9 224.9 252.8 226.8 250.9C228.5 249.2 230.6 246.4 232.5 244.2C234.4 242 235 240.4 236.3 237.9C237.6 235.4 236.9 233.2 236 231.3C235.1 229.4 227.6 210.9 224.5 203.4C221.4 196.1 218.3 197.1 216 197C213.8 196.9 211.3 196.9 208.8 196.9C206.3 196.9 202.2 197.8 198.7 201.6C195.2 205.4 185.3 214.7 185.3 233.8C185.3 252.9 199.2 271.3 201.1 273.9C203 276.5 228.4 315.8 267.3 332.6C276.5 336.6 283.8 339.1 289.4 340.9C298.7 343.8 307.2 343.4 313.9 342.4C321.4 341.3 337 332.9 340.3 323.7C343.6 314.5 343.6 306.6 342.6 304.9C341.6 303.1 339.1 302.1 335.3 300.2L331.1 298.5Z" fill="pink"/>
+    </svg>
+</a>
+
+</div>
+        <p style="text-align: center; opacity: 0.3; font-size: 0.8rem;">&copy; 2026 Diamond Silver Beauty College. Crafted for Excellence.</p>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // --- LOADER LOGIC ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                body.classList.remove('no-scroll');
+                setTimeout(() => loader.style.display = 'none', 1000);
+            }, 3000); // 3-second cycle for the D-animation
+        });
+
+        // --- NAVIGATION LOGIC ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('no-scroll');
+            });
+        });
+        // --- CLICK OUTSIDE TO CLOSE ---
+window.addEventListener('click', (e) => {
+    // Check if the menu is currently active
+    if (navLinks.classList.contains('active')) {
+        /* If the click was NOT on the navLinks AND 
+           NOT on the hamburger button (or its spans), 
+           then close the menu.
+        */
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
+    }
+});
+
+
+        // --- PARTICLES CONFIG ---
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 },
+                "color": { "value": "#d42a7d" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#d42a7d", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2 }
+            }
+        });
+
+        // --- SCROLL REVEAL ---
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if(entry.target.classList.contains('stat-section')) startCounters();
+                }
+            });
+        }, { threshold: 0.2 });
+
+        reveals.forEach(r => observer.observe(r));
+
+        // --- COUNTER LOGIC ---
+        let started = false;
+        function startCounters() {
+            if(started) return;
+            started = true;
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const update = () => {
+                    const count = +counter.innerText;
+                    const speed = target / 100;
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + speed);
+                        setTimeout(update, 30);
+                    } else {
+                        counter.innerText = target + (target === 500 ? "+" : "");
+                    }
+                }
+                update();
+            });
+        }
+
+        // --- NAV & SCROLL TOP ---
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const scrollBtn = document.getElementById('scrollTop');
+            if(window.scrollY > 100) {
+                nav.classList.add('scrolled');
+                scrollBtn.classList.add('show');
+            } else {
+                nav.classList.remove('scrolled');
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        document.getElementById('scrollTop').onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+    </script>
+</body>
+</html>
